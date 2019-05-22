@@ -1,10 +1,8 @@
 package interfaces;
 
+import java.io.IOException;
 import java.rmi.Remote;
-import java.util.Optional;
 
 public interface IAuthentication extends Remote {
-  Optional<String> attemptLogin( String user , String password );
-  void attemptLogout( String token );
-  Boolean validateToken( String token );
+  boolean attemptLogin( String user , String password ) throws IOException;
 }
