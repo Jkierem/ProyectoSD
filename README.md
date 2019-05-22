@@ -14,7 +14,7 @@ Los siguientes paquetes estan definidos:
 
 ## Flujo esperado de Cliente:
 
-- [ ] 1 - Autenticar
+- [X] 1 - Autenticar
 - [ ] 2 - Armar Pedido
 - [ ] 3 - Realizar Compra
 
