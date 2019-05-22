@@ -9,9 +9,9 @@ import java.io.IOException;
 import java.util.HashMap;
 
 public class Authentication implements IAuthentication {
-    public HashMap<String,String> userBase;
-    public UserWriter userWriter;
-    public static final String NEW_USER_PASSWORD="__NEW_USER_PASSWORD__";
+    private HashMap<String,String> userBase;
+    private UserWriter userWriter;
+    private static final String NEW_USER_PASSWORD="__NEW_USER_PASSWORD__";
 
     public Authentication(String fileName) throws IOException{
         this.userBase = new UserReader(fileName, NEW_USER_PASSWORD).readFile();
@@ -38,7 +38,11 @@ public class Authentication implements IAuthentication {
         try {
             Authentication auth = new Authentication(fname);
             RMIServer<Authentication, IAuthentication> server = new RMIServer<>(() -> auth);
-            server.createAndRegister("Auth");
+            System.out.println("Rebinding Auth...");
+            server.createAndRebind("Auth");
+            for( String key : auth.userBase.keySet() ){
+                System.out.println( key + ":" + auth.userBase.get(key));
+            }
             System.out.println("Server started...");
         } catch (Exception e) {
             System.out.println("Could not start server");
