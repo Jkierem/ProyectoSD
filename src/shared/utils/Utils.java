@@ -1,5 +1,8 @@
 package shared.utils;
 
+import shared.functional.Effect;
+import shared.functional.Functor;
+
 import javax.swing.text.html.Option;
 import java.math.BigInteger;
 import java.net.DatagramSocket;
@@ -8,7 +11,9 @@ import java.net.SocketException;
 import java.net.UnknownHostException;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Optional;
 
 public class Utils {
@@ -39,11 +44,27 @@ public class Utils {
 		}
 	}
 
-	public static <K,V> HashMap<K,V> getPartialMap( HashMap<K,V> data , Iterable<K> keys ){
+	public static <K,V> HashMap<K,V> filterHashMap(HashMap<K,V> data , Functor<V,Boolean> filter){
 		HashMap<K,V> partial = new HashMap<>();
-		for( K key : keys ){
-			partial.put( key , data.get(key) );
+		for( K key : data.keySet() ){
+			if( filter.apply(data.get(key)) ){
+				partial.put( key , data.get(key) );
+			}
 		}
 		return partial;
+	}
+
+	public static <K,V,W> HashMap<K,W> mapHashMap( HashMap<K,V> data , Functor<V,W> mapping ){
+		HashMap<K,W> partial = new HashMap<>();
+		for( K key : data.keySet() ){
+			partial.put( key , mapping.apply(data.get(key)) );
+		}
+		return partial;
+	}
+
+	public static <K,V> void forEachHashMap(HashMap<K,V> data , Effect<V> effect ){
+		for( K key : data.keySet() ){
+			effect.apply(data.get(key));
+		}
 	}
 }
