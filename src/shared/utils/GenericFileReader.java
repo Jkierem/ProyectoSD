@@ -8,7 +8,7 @@ import java.io.IOException;
 
 import shared.functional.Inserter;
 
-public class GenericFileReader<T,Container> {
+public class GenericFileReader<T, Container> {
 	
 	private FileReader reader;
 	private BufferedReader buffer;

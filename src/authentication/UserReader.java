@@ -1,9 +1,11 @@
-package shared.utils;
+package authentication;
+
+import shared.utils.AbstractCSVReader;
 
 import java.io.FileNotFoundException;
 import java.util.HashMap;
 
-public class UserReader extends CSVReader<HashMap<String,String>>{
+public class UserReader extends AbstractCSVReader<HashMap<String,String>> {
 
     private final String defaultPassword;
 

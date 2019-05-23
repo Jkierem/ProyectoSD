@@ -8,6 +8,7 @@ import java.net.SocketException;
 import java.net.UnknownHostException;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
+import java.util.HashMap;
 import java.util.Optional;
 
 public class Utils {
@@ -36,6 +37,13 @@ public class Utils {
 		} catch (NoSuchAlgorithmException e) {
 			return Optional.empty();
 		}
+	}
 
+	public static <K,V> HashMap<K,V> getPartialMap( HashMap<K,V> data , Iterable<K> keys ){
+		HashMap<K,V> partial = new HashMap<>();
+		for( K key : keys ){
+			partial.put( key , data.get(key) );
+		}
+		return partial;
 	}
 }

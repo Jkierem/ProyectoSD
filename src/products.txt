@@ -1,0 +1,6 @@
+guanabana,20,1200
+torombolo,2,2500
+alfajor,5,1500
+chocolate,33,3300
+camiseta,13,50000
+loquesea,25,6700

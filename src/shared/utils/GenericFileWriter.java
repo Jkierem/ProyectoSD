@@ -19,7 +19,7 @@ public class GenericFileWriter< T , Container extends Iterable<T> > {
         this.path = path;
     }
 
-    public void close() throws IOException {
+    private void close() throws IOException {
         this.buffer.close();
         this.writer.close();
     }
