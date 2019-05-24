@@ -1,9 +1,10 @@
 package shared.logic;
 
+import shared.exceptions.StubNotFoundException;
+
 import java.rmi.Remote;
 import java.rmi.registry.LocateRegistry;
 import java.rmi.registry.Registry;
-import java.util.Optional;
 
 public class RMIClient<Interface extends Remote> {
 
@@ -13,15 +14,14 @@ public class RMIClient<Interface extends Remote> {
         this.host = host;
     }
 
-    public Optional<Interface> getStub(String name){
+    public Interface getStub(String name) throws StubNotFoundException {
         try {
             Registry registry = LocateRegistry.getRegistry(this.host);
             @SuppressWarnings("unchecked")
             Interface stub = (Interface) registry.lookup(name);
-            return Optional.of(stub);
+            return stub;
         } catch (Exception e) {
-            e.printStackTrace();
-            return Optional.empty();
+            throw new StubNotFoundException(name , this.host);
         }
     }
 }

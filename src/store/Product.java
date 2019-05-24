@@ -1,4 +1,6 @@
-package models;
+package store;
+
+import shared.exceptions.InsufficientQuantityException;
 
 public class Product {
     private int id;
@@ -29,7 +31,10 @@ public class Product {
         return value;
     }
 
-    public void changeQuantityBy(int amount ){
+    public void changeQuantityBy(int amount ) throws InsufficientQuantityException {
+        if( quantity + amount < 0 ){
+            throw new InsufficientQuantityException();
+        }
         this.quantity += amount;
     }
 

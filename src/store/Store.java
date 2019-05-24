@@ -1,10 +1,12 @@
 package store;
 
 import interfaces.IStore;
-import models.Product;
+import shared.exceptions.InvalidOperationException;
+import shared.exceptions.NonexistentProductException;
 import shared.utils.Utils;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
@@ -19,25 +21,19 @@ public class Store implements IStore {
     }
 
     @Override
-    public int getProductQuantity(int id) {
-        if( this.inventory.containsKey(id) ){
-            return this.inventory.get(id).getQuantity();
-        }
-        return 0;
-    }
-
-    @Override
-    public HashMap<Integer,Product> batchGetProducts(List<Integer> ids) {
+    public HashMap<Integer,Product> batchGetProducts(List<Integer> ids) throws NonexistentProductException {
+        this.validateKeys( ids );
         return Utils.filterHashMap( inventory , product -> ids.contains( product.getId() ) );
     }
 
     @Override
-    public HashMap<Integer,Product> batchGetProductCopies(List<Integer> ids) {
+    public HashMap<Integer,Product> batchGetProductCopies(List<Integer> ids) throws NonexistentProductException {
         return Utils.mapHashMap( this.batchGetProducts(ids) , Product::copy );
     }
 
     @Override
-    public void batchSetProducts(HashMap<Integer,Product> products) {
+    public void batchSetProducts(HashMap<Integer,Product> products) throws InvalidOperationException {
+        this.validateKeys(products.keySet());
         for( Integer key : products.keySet() ){
             this.inventory.put( key , products.get(key) );
         }
@@ -45,6 +41,27 @@ public class Store implements IStore {
             this.writer.writeFile( this.inventory );
         } catch (IOException e) {
             e.printStackTrace();
+        }
+    }
+
+    @Override
+    public HashMap<Integer, Product> getAllProductCopies() throws NonexistentProductException {
+        return this.batchGetProductCopies( List.copyOf(this.inventory.keySet()) );
+    }
+
+    private void validateKeys( Iterable<Integer> keys ) throws NonexistentProductException {
+        List<Integer> falseKeys = new ArrayList<>();
+        for( Integer key : keys ){
+            if( !this.inventory.containsKey(key) ){
+                falseKeys.add(key);
+            }
+        }
+        if( !falseKeys.isEmpty() ){
+            if( falseKeys.size() == 1 ){
+                throw new NonexistentProductException( falseKeys.get(0) );
+            }else{
+                throw new NonexistentProductException( falseKeys );
+            }
         }
     }
 
@@ -58,6 +75,8 @@ public class Store implements IStore {
             }
             store.batchSetProducts(changed);
         } catch (IOException e) {
+            e.printStackTrace();
+        } catch (InvalidOperationException e){
             e.printStackTrace();
         }
 

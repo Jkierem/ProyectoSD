@@ -1,13 +1,15 @@
 package interfaces;
 
-import models.Product;
+import shared.exceptions.NonexistentProductException;
+import store.Product;
+import shared.exceptions.InvalidOperationException;
 
 import java.util.HashMap;
 import java.util.List;
 
 public interface IStore {
-    int getProductQuantity( int id );
-    HashMap<Integer,Product> batchGetProducts(List<Integer> ids );
-    HashMap<Integer,Product> batchGetProductCopies(List<Integer> ids );
-    void batchSetProducts(HashMap<Integer,Product> products);
+    HashMap<Integer,Product> batchGetProducts(List<Integer> ids ) throws NonexistentProductException;
+    HashMap<Integer,Product> batchGetProductCopies(List<Integer> ids ) throws NonexistentProductException;
+    HashMap<Integer,Product> getAllProductCopies() throws NonexistentProductException;
+    void batchSetProducts(HashMap<Integer,Product> products) throws InvalidOperationException;
 }

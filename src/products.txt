@@ -2,5 +2,5 @@
 1,torombolo,2,2500
 2,alfajor,5,1500
 3,chocolate,33,3300
-4,camiseta,23,50000
-5,loquesea,15,6700
+4,camiseta,13,50000
+5,loquesea,5,6700

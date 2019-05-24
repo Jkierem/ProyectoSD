@@ -1,7 +1,5 @@
 package store;
 
-import models.Product;
-
 public class ProductBuilder {
     private int id;
     private int quantity;

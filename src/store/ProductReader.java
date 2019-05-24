@@ -1,6 +1,5 @@
 package store;
 
-import models.Product;
 import shared.utils.AbstractCSVReader;
 
 import java.io.FileNotFoundException;

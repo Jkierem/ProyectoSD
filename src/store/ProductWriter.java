@@ -1,6 +1,5 @@
 package store;
 
-import models.Product;
 import shared.utils.AbstractCSVWriter;
 
 import java.io.IOException;

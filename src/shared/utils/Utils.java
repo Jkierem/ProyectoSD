@@ -1,5 +1,6 @@
 package shared.utils;
 
+import jdk.jshell.spi.ExecutionControl;
 import shared.functional.Effect;
 import shared.functional.Functor;
 
@@ -65,6 +66,14 @@ public class Utils {
 	public static <K,V> void forEachHashMap(HashMap<K,V> data , Effect<V> effect ){
 		for( K key : data.keySet() ){
 			effect.apply(data.get(key));
+		}
+	}
+
+	public static <T> T getOrElse( int index , List<T> data , T orElse ){
+		try{
+			return data.get(index);
+		}catch (Exception e){
+			return orElse;
 		}
 	}
 }
