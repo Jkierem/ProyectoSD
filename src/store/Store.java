@@ -44,6 +44,16 @@ public class Store implements IStore {
         }
     }
 
+    public void setProduct(Product p) throws InvalidOperationException {
+        this.validateKeys(List.of(p.getId()));
+        this.inventory.put( p.getId() , p );
+        try {
+            this.writer.writeFile(this.inventory);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
     @Override
     public HashMap<Integer, Product> getAllProductCopies() throws NonexistentProductException {
         return this.batchGetProductCopies( List.copyOf(this.inventory.keySet()) );
@@ -76,9 +86,6 @@ public class Store implements IStore {
             store.batchSetProducts(changed);
         } catch (IOException e) {
             e.printStackTrace();
-        } catch (InvalidOperationException e){
-            e.printStackTrace();
         }
-
     }
 }

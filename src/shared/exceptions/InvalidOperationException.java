@@ -1,6 +1,8 @@
 package shared.exceptions;
 
-public class InvalidOperationException extends Exception {
+import java.rmi.RemoteException;
+
+public class InvalidOperationException extends RemoteException {
     public InvalidOperationException(String message) {
         super(message);
     }

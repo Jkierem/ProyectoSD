@@ -7,21 +7,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="599fa994-0ca6-4eb4-86e9-e81f3e06ff6d" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/authentication/Authentication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/authentication/Authentication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/authentication/UserReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/authentication/UserReader.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/authentication/UserWriter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/authentication/UserWriter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/client/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/Client.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/interfaces/IAuthentication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/interfaces/IAuthentication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/interfaces/IStore.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/interfaces/IStore.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/models/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/Product.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/products.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/products.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/shared/logic/RMIClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/logic/RMIClient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/shared/utils/Utils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/utils/Utils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store/ProductBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/ProductBuilder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store/ProductReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/ProductReader.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store/ProductWriter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/ProductWriter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/interfaces/IProductSystem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/interfaces/IProductSystem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/shared/exceptions/InvalidOperationException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/exceptions/InvalidOperationException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/shared/logic/Operation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/logic/Operation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/shared/logic/Transaction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/logic/Transaction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/shared/logic/TransactionalSystem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/logic/TransactionalSystem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/ProductSystem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/ProductSystem.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/store/Store.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/Store.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/users.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/users.txt" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -36,10 +31,22 @@
   <component name="FileEditorManager">
     <leaf>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/store/ProductSystem.java">
+        <entry file="file://$PROJECT_DIR$/src/authentication/Authentication.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="457">
-              <caret line="114" column="4" lean-forward="true" selection-start-line="114" selection-start-column="4" selection-end-line="147" selection-end-column="5" />
+            <state relative-caret-position="210">
+              <caret line="106" column="8" lean-forward="true" selection-start-line="106" selection-start-column="8" selection-end-line="110" selection-end-column="9" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/shared/logic/Transaction.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="75">
+              <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -50,8 +57,11 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/shared/logic/TransactionalSystem.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="45">
-              <caret line="3" selection-start-line="3" selection-end-line="3" />
+            <state relative-caret-position="46">
+              <caret line="86" column="9" lean-forward="true" selection-start-line="86" selection-start-column="9" selection-end-line="86" selection-end-column="9" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -66,16 +76,18 @@
       </list>
     </option>
   </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>abortTransaction</find>
+      <find>forceAbort</find>
+    </findStrings>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/shared/logic/RMIServer.java" />
-        <option value="$PROJECT_DIR$/src/client/Client.java" />
-        <option value="$PROJECT_DIR$/src/shared/utils/CSVWriter.java" />
-        <option value="$PROJECT_DIR$/src/shared/utils/AbstractCSVReader.java" />
         <option value="$PROJECT_DIR$/src/shared/utils/GenericFileWriter.java" />
         <option value="$PROJECT_DIR$/src/shared/utils/AbstractCSVWriter.java" />
         <option value="$PROJECT_DIR$/src/shared/utils/UserWriter.java" />
@@ -95,7 +107,6 @@
         <option value="$PROJECT_DIR$/src/interfaces/IStore.java" />
         <option value="$PROJECT_DIR$/src/shared/logic/NoSuchTransactionException.java" />
         <option value="$PROJECT_DIR$/src/shared/logic/NonexistentProductException.java" />
-        <option value="$PROJECT_DIR$/src/store/Store.java" />
         <option value="$PROJECT_DIR$/src/interfaces/ITransactionSystem.java" />
         <option value="$PROJECT_DIR$/src/store/Operation.java" />
         <option value="$PROJECT_DIR$/src/shared/logic/ClientNotFoundException.java" />
@@ -113,16 +124,21 @@
         <option value="$PROJECT_DIR$/src/authentication/UserData.java" />
         <option value="$PROJECT_DIR$/src/shared/utils/OptionalList.java" />
         <option value="$PROJECT_DIR$/src/shared/logic/UnathorizedException.java" />
-        <option value="$PROJECT_DIR$/src/interfaces/IAuthentication.java" />
         <option value="$PROJECT_DIR$/src/shared/logic/UserNotFoundException.java" />
-        <option value="$PROJECT_DIR$/src/shared/logic/Operation.java" />
         <option value="$PROJECT_DIR$/src/store/ProductTransaction.java" />
         <option value="$PROJECT_DIR$/src/store/Transaction.java" />
-        <option value="$PROJECT_DIR$/src/shared/logic/Transaction.java" />
-        <option value="$PROJECT_DIR$/src/authentication/Authentication.java" />
         <option value="$PROJECT_DIR$/src/interfaces/IProductSystem.java" />
-        <option value="$PROJECT_DIR$/src/shared/logic/TransactionalSystem.java" />
+        <option value="$PROJECT_DIR$/src/client/Client.java" />
+        <option value="$PROJECT_DIR$/src/shared/exceptions/InvalidOperationException.java" />
+        <option value="$PROJECT_DIR$/src/store/Store.java" />
+        <option value="$PROJECT_DIR$/src/shared/exceptions/ServerException.java" />
+        <option value="$PROJECT_DIR$/src/authentication/AuthRunner.java" />
+        <option value="$PROJECT_DIR$/src/shared/logic/Transaction.java" />
+        <option value="$PROJECT_DIR$/src/shared/logic/Operation.java" />
         <option value="$PROJECT_DIR$/src/store/ProductSystem.java" />
+        <option value="$PROJECT_DIR$/src/interfaces/IAuthentication.java" />
+        <option value="$PROJECT_DIR$/src/shared/logic/TransactionalSystem.java" />
+        <option value="$PROJECT_DIR$/src/authentication/Authentication.java" />
       </list>
     </option>
   </component>
@@ -222,11 +238,11 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.Store">
-    <configuration name="AuthServer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="authentication.AuthServer" />
+  <component name="RunManager" selected="Application.AuthRunner">
+    <configuration name="AuthRunner" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="authentication.AuthRunner" />
       <module name="Taller-RMI" />
-      <option name="PROGRAM_PARAMETERS" value="-Djava.rmi.server.codebase=file:$PROJECT_DIR$/out/production/Taller-RMI/" />
+      <option name="PROGRAM_PARAMETERS" value="&quot;$PROJECT_DIR$/src/users.txt&quot;" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value=".*" />
@@ -237,10 +253,10 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Authentication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="authentication.Authentication" />
+    <configuration name="AuthServer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="authentication.AuthServer" />
       <module name="Taller-RMI" />
-      <option name="PROGRAM_PARAMETERS" value="&quot;$PROJECT_DIR$/src/users.txt&quot;" />
+      <option name="PROGRAM_PARAMETERS" value="-Djava.rmi.server.codebase=file:$PROJECT_DIR$/out/production/Taller-RMI/" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value=".*" />
@@ -295,14 +311,14 @@
     </configuration>
     <list>
       <item itemvalue="Application.AuthServer" />
-      <item itemvalue="Application.Authentication" />
+      <item itemvalue="Application.AuthRunner" />
       <item itemvalue="Application.Client" />
       <item itemvalue="Application.Store" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.AuthRunner" />
         <item itemvalue="Application.Store" />
-        <item itemvalue="Application.Authentication" />
         <item itemvalue="Application.Client" />
         <item itemvalue="Application.AuthServer" />
       </list>
@@ -321,12 +337,12 @@
       <workItem from="1558371523342" duration="2780000" />
       <workItem from="1558454008342" duration="1927000" />
       <workItem from="1558462646650" duration="27578000" />
-      <workItem from="1558613334713" duration="26937000" />
+      <workItem from="1558613334713" duration="33508000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="59222000" />
+    <option name="totallyTimeSpent" value="65793000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="67" y="25" width="1299" height="743" extended-state="6" />
@@ -342,7 +358,7 @@
       <window_info anchor="bottom" id="Messages" order="0" weight="0.32899022" />
       <window_info anchor="bottom" id="Message" order="1" />
       <window_info anchor="bottom" id="Find" order="2" weight="0.32899022" />
-      <window_info anchor="bottom" id="Run" order="3" weight="0.32899022" />
+      <window_info anchor="bottom" id="Run" order="3" visible="true" weight="0.32899022" />
       <window_info anchor="bottom" id="Debug" order="4" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="5" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="6" weight="0.4" />
@@ -367,24 +383,6 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/shared/utils/ConditionalLogger.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/shared/utils/GenericFileWriter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="21" column="11" selection-start-line="21" selection-start-column="11" selection-end-line="21" selection-end-column="11" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/interfaces/ILocator.java" />
     <entry file="file://$PROJECT_DIR$/src/interfaces/IRemoteTransaction.java" />
     <entry file="file://$PROJECT_DIR$/src/shared/utils/ReadOnlyPair.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -540,16 +538,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/client/Client.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="19" column="67" lean-forward="true" selection-start-line="19" selection-start-column="67" selection-end-line="19" selection-end-column="67" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/shared/logic/RMIServer.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="825">
@@ -564,16 +552,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="232">
           <caret line="35" column="54" lean-forward="true" selection-start-line="35" selection-start-column="54" selection-end-line="35" selection-end-column="54" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/store/Store.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="34" column="16" selection-start-line="34" selection-start-column="16" selection-end-line="34" selection-end-column="16" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -638,13 +616,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/users.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/shared/utils/OptionalList.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="210">
@@ -674,38 +645,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/interfaces/IAuthentication.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="49" lean-forward="true" selection-start-line="7" selection-start-column="49" selection-end-line="7" selection-end-column="49" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/shared/exceptions.java">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/shared/logic/Operation.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
-          <folding>
-            <element signature="e#538#539#0" expanded="true" />
-            <element signature="e#616#617#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/shared/exceptions/InsufficientQuantityException.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/shared/exceptions/InvalidOperationException.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
           <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
@@ -761,46 +704,127 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/interfaces/IProductSystem.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="51" selection-start-line="2" selection-start-column="51" selection-end-line="2" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/client/Client.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" selection-start-line="5" selection-end-line="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/shared/exceptions/InvalidOperationException.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="62" selection-start-line="4" selection-start-column="62" selection-end-line="4" selection-end-column="62" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/store/Store.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="585">
+          <caret line="88" column="9" selection-start-line="88" selection-start-column="9" selection-end-line="88" selection-end-column="9" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///usr/lib/jvm/java-11-oracle/lib/src.zip!/java.rmi/sun/rmi/server/Util.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="263">
+          <caret line="263" column="14" selection-start-line="263" selection-start-column="14" selection-end-line="263" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/shared/exceptions/ServerException.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="49" selection-start-line="4" selection-start-column="49" selection-end-line="4" selection-end-column="49" />
+          <folding>
+            <element signature="e#136#137#0" expanded="true" />
+            <element signature="e#166#167#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/users.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/shared/logic/Operation.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="20" column="41" selection-start-line="20" selection-start-column="41" selection-end-line="20" selection-end-column="41" />
+          <folding>
+            <element signature="e#580#581#0" expanded="true" />
+            <element signature="e#658#659#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/store/ProductSystem.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-225">
+          <caret line="20" column="16" lean-forward="true" selection-start-line="20" selection-start-column="16" selection-end-line="20" selection-end-column="16" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/interfaces/IAuthentication.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" selection-start-line="1" selection-end-line="1" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/authentication/AuthRunner.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="21" column="14" selection-start-line="21" selection-start-column="14" selection-end-line="21" selection-end-column="14" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/shared/logic/TransactionalSystem.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="46">
+          <caret line="86" column="9" lean-forward="true" selection-start-line="86" selection-start-column="9" selection-end-line="86" selection-end-column="9" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/shared/logic/Transaction.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
           <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#930#931#0" expanded="true" />
-            <element signature="e#975#976#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/authentication/Authentication.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="382">
-          <caret line="50" column="41" lean-forward="true" selection-start-line="50" selection-start-column="41" selection-end-line="50" selection-end-column="41" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/interfaces/IProductSystem.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="15" column="44" selection-start-line="15" selection-start-column="44" selection-end-line="15" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/shared/logic/TransactionalSystem.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" selection-start-line="3" selection-end-line="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/store/ProductSystem.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="457">
-          <caret line="114" column="4" lean-forward="true" selection-start-line="114" selection-start-column="4" selection-end-line="147" selection-end-column="5" />
+        <state relative-caret-position="210">
+          <caret line="106" column="8" lean-forward="true" selection-start-line="106" selection-start-column="8" selection-end-line="110" selection-end-column="9" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

@@ -3,7 +3,7 @@ package shared.logic;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Transaction {
+public class Transaction<ID,Quantity extends Number> {
 
     public enum State {
         WORKING, VALIDATION, UPDATE, FINISHED;
@@ -12,8 +12,8 @@ public class Transaction {
 
     private String host;
     private State state;
-    private List<Operation> readOps;
-    private List<Operation> writeOps;
+    private List<Operation<ID,Quantity>> readOps;
+    private List<Operation<ID,Quantity>> writeOps;
     public Transaction(int id, String host) {
         this.id = id;
         this.host = host;
@@ -30,15 +30,15 @@ public class Transaction {
         return this.id;
     }
 
-    public void addReadOperation(Operation op ){
+    public void addReadOperation(Operation<ID,Quantity> op ){
         this.readOps.add(op);
     }
 
-    public void addWriteOperation( Operation op ){
+    public void addWriteOperation( Operation<ID,Quantity> op ){
         this.writeOps.add(op);
     }
 
-    public void markForValidation( int order ){
+    public void markForValidation(){
         this.state = State.VALIDATION;
     }
 
@@ -53,7 +53,7 @@ public class Transaction {
         return this.writeOps.size() == 0;
     }
 
-    public List<Operation> getWriteOps(){
+    public List<Operation<ID,Quantity>> getWriteOps(){
         return this.writeOps;
     }
 
@@ -61,10 +61,10 @@ public class Transaction {
         return t.id == this.id;
     }
 
-    public boolean forwardValidate( Transaction ti ){
+    public boolean forwardValidate( Transaction<ID,Quantity> ti ){
         boolean valid = true;
-        for( Operation writeOp : this.writeOps ){
-            for( Operation readOp : ti.readOps ){
+        for( Operation<ID,Quantity> writeOp : this.writeOps ){
+            for( Operation<ID,Quantity> readOp : ti.readOps ){
                 if( writeOp.shareResource(readOp) ){
                     valid = false;
                 }
