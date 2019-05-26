@@ -1,27 +1,34 @@
 package authentication;
 
-import shared.utils.Pair;
-
 public class UserData {
-    Pair<String,Integer> data;
+    String password;
+    int balance;
+    boolean isAdmin;
 
-    public UserData(String password, Integer balance) {
-        this.data = new Pair<>(password,balance);
+    public UserData(String password, int balance, boolean isAdmin) {
+        this.password = password;
+        this.balance = balance;
+        this.isAdmin = isAdmin;
     }
 
-    public String getPassword(){
-        return this.data.getFirst();
+    public String getPassword() {
+        return password;
     }
 
-    public int getBalace(){
-        return this.data.getSecond();
+    public void setPassword(String password) {
+        this.password = password;
     }
 
-    public void setPassword( String pass ){
-        this.data.setFirst(pass);
+    public int getBalance() {
+        return balance;
     }
 
-    public void setBalance( int balance ){
-        this.data.setSecond(balance);
+    public void setBalance(int balance) {
+        this.balance = balance;
     }
+
+    public boolean isAdmin() {
+        return isAdmin;
+    }
+
 }

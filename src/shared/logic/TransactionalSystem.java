@@ -1,6 +1,7 @@
 package shared.logic;
 
 import shared.exceptions.InvalidOperationException;
+import shared.exceptions.InvalidTransactionException;
 import shared.exceptions.NoSuchTransactionException;
 
 import java.util.ArrayList;
@@ -62,7 +63,7 @@ public abstract class TransactionalSystem<ID,Quantity extends Number> {
         return Optional.empty();
     }
 
-    private Transaction<ID,Quantity> getTransaction(int tid ) throws NoSuchTransactionException {
+    protected Transaction<ID,Quantity> getTransaction(int tid ) throws NoSuchTransactionException {
         Optional<Transaction<ID,Quantity>> maybeTrx = this.findTransaction(tid);
         if( maybeTrx.isEmpty() ){
             throw new NoSuchTransactionException(tid);
@@ -70,14 +71,22 @@ public abstract class TransactionalSystem<ID,Quantity extends Number> {
         return maybeTrx.get();
     }
 
+    private void beforeCommitValidation( Transaction<ID,Quantity> tx ) throws InvalidTransactionException {
+        if( !this.beforeCommit(tx) ){
+            throw new InvalidTransactionException( tx.getId() );
+        }
+    }
+
     protected void commitTransaction( int tid ) throws InvalidOperationException {
         Transaction<ID,Quantity> t = this.getTransaction(tid);
         if( !t.isReadOnly()){
+            this.beforeCommitValidation( t );
             t.markForValidation( );
             this.validateTransactions( t );
             this.updateResources( t );
         }
         this.alertCommit( t );
+        this.afterCommit( t );
         this.cleanTransactions();
     }
 
@@ -103,4 +112,9 @@ public abstract class TransactionalSystem<ID,Quantity extends Number> {
     protected abstract void alertAbort(Transaction<ID,Quantity> tx , boolean manual ) throws InvalidOperationException;
     protected abstract void alertCommit( Transaction<ID,Quantity> tx ) throws InvalidOperationException;
     protected abstract void applyOperation( Transaction<ID,Quantity> tx ,Operation<ID,Quantity> op ) throws InvalidOperationException;
+    protected boolean beforeCommit( Transaction<ID,Quantity> tx ) {
+        return true;
+    }
+    protected void afterCommit( Transaction<ID,Quantity> tx ) throws InvalidOperationException {}
+
 }

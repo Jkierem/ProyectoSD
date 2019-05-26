@@ -2,7 +2,6 @@ package authentication;
 
 import shared.utils.AbstractCSVReader;
 import shared.utils.OptionalList;
-import shared.utils.Pair;
 
 import java.io.FileNotFoundException;
 import java.util.HashMap;
@@ -23,7 +22,8 @@ public class UserReader extends AbstractCSVReader<HashMap<String, UserData>> {
         String id = data.get(0);
         int balance = data.getOrElseMap(1,0, Integer::parseInt);
         String pass = data.getOrElse(2, this.defaultPassword);
-        UserData userData = new UserData(pass,balance);
+        boolean isAdmin = data.getOrElseMap(3,false,Boolean::parseBoolean);
+        UserData userData = new UserData(pass,balance,isAdmin);
         container.put(id,userData);
     }
 

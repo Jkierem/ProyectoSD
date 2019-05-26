@@ -2,6 +2,7 @@ package authentication;
 
 import interfaces.IAuthentication;
 import shared.logic.RMIServer;
+import shared.utils.ConditionalLogger;
 
 public class AuthRunner {
     public static void main(String[] args) {
@@ -10,16 +11,12 @@ public class AuthRunner {
         }
         String fname = args[0];
         try {
-            Authentication auth = new Authentication(fname);
+            ConditionalLogger logger = new ConditionalLogger(true,"Auth: ");
+            Authentication auth = new Authentication(fname,logger);
+            auth.printUserBase();
             RMIServer<Authentication, IAuthentication> server = new RMIServer<>(() -> auth);
             System.out.println("Rebinding Auth...");
             server.createAndRebind("Auth");
-            for( String key : auth.getUserBase().keySet() ){
-                UserData data = auth.getUserBase().get(key);
-                System.out.println( "User: " + key + " Password: " + data.getPassword() + " Balance:" + data.getBalace());
-            }
-
-            //auth.attemptChangeBalance();
             System.out.println("Server started...");
         } catch (Exception e) {
             System.out.println("Could not start server");

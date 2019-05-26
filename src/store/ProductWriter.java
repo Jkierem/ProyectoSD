@@ -15,7 +15,7 @@ public class ProductWriter extends AbstractCSVWriter<HashMap<Integer, Product>> 
 
     @Override
     protected Iterable<String[]> convertData(HashMap<Integer, Product> c) {
-        List data = new ArrayList();
+        List<String[]> data = new ArrayList<>();
         for ( Integer key : c.keySet() ){
             data.add( c.get(key).toTuple() );
         }
