@@ -1,6 +1,6 @@
-guanabana,20,1200
-torombolo,2,2500
-alfajor,5,1500
-chocolate,33,3300
-camiseta,13,50000
-loquesea,25,6700
+0,guanabana,20,1200
+1,torombolo,2,2500
+2,alfajor,5,1500
+3,chocolate,33,3300
+4,camiseta,13,50000
+5,loquesea,5,6700

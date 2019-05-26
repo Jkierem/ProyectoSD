@@ -7,19 +7,21 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
-public class UserWriter extends AbstractCSVWriter<HashMap<String,String>> {
+public class UserWriter extends AbstractCSVWriter<HashMap<String,UserData>> {
 
     public UserWriter(String path) throws IOException {
         super(path,",");
     }
 
     @Override
-    protected Iterable<String[]> convertData(HashMap<String, String> c) {
+    protected Iterable<String[]> convertData(HashMap<String, UserData> c) {
         List<String[]> res = new ArrayList<>();
         for( String key : c.keySet()){
-            String[] tuple = new String[2];
+            String[] tuple = new String[4];
             tuple[0] = key;
-            tuple[1] = c.get(key);
+            tuple[1] = String.valueOf(c.get(key).getBalance());
+            tuple[2] = c.get(key).getPassword();
+            tuple[3] = String.valueOf(c.get(key).isAdmin());
             res.add(tuple);
         }
         return res;
