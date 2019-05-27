@@ -2,7 +2,9 @@ package store;
 
 import shared.exceptions.InsufficientQuantityException;
 
-public class Product {
+import java.io.Serializable;
+
+public class Product implements Serializable {
     private int id;
     private int quantity;
     private String name;

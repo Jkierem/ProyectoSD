@@ -1,17 +1,17 @@
 package interfaces;
 
-import shared.exceptions.InvalidOperationException;
 import store.Product;
 
 import java.rmi.Remote;
+import java.rmi.RemoteException;
 import java.util.List;
 
 public interface IProductSystem extends Remote {
-    void registerClient( String host );
-    int startProductTransaction( String host );
-    void abortProductTransaction( int tid ) throws InvalidOperationException;
-    void finishProductTransaction( int tid ) throws InvalidOperationException;
-    Product getProduct( int tid , int rid ) throws InvalidOperationException;
-    List<Product> getAllProducts( int tid ) throws InvalidOperationException;
-    void attemptUpdateProductQuantity( int tid , int rid , int quantity ) throws InvalidOperationException;
+    void registerClient( String host , String binding ) throws RemoteException;
+    int startProductTransaction( String host , String binding ) throws RemoteException;
+    void abortProductTransaction( int tid ) throws RemoteException;
+    void attemptPurchase(int tid , String user ) throws RemoteException;
+    Product getProduct( int tid , int rid ) throws RemoteException;
+    List<Product> getAllProducts( int tid ) throws RemoteException;
+    void attemptUpdateProductQuantity( int tid , int rid , int quantity ) throws RemoteException;
 }

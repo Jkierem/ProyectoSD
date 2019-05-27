@@ -4,6 +4,7 @@ import shared.exceptions.InvalidOperationException;
 import shared.exceptions.InvalidTransactionException;
 import shared.exceptions.NoSuchTransactionException;
 
+import java.rmi.RemoteException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
@@ -23,14 +24,14 @@ public abstract class TransactionalSystem<ID,Quantity extends Number> {
         return TRANSACTION_COUNT;
     }
 
-    protected void manualAbort( int tid ) throws InvalidOperationException {
+    protected void manualAbort( int tid ) throws RemoteException {
         Transaction<ID,Quantity> t = this.getTransaction(tid);
         t.markForRemoval();
         this.alertAbort( t , true);
         this.cleanTransactions();
     }
 
-    private void forceAbort(Transaction<ID,Quantity> tx) throws InvalidOperationException {
+    protected void forceAbort(Transaction<ID,Quantity> tx) throws RemoteException {
         tx.markForRemoval();
         this.alertAbort(tx, false );
         this.cleanTransactions();
@@ -42,7 +43,7 @@ public abstract class TransactionalSystem<ID,Quantity extends Number> {
                 .collect(Collectors.toList());
     }
 
-    private void validateTransactions( Transaction<ID,Quantity> tv ) throws InvalidOperationException {
+    private void validateTransactions( Transaction<ID,Quantity> tv ) throws RemoteException {
         for( Transaction<ID,Quantity> ti : this.transactions){
             if( !ti.equals(tv) ){
                 if( !ti.isReadyForRemoval() && !ti.isAwaitingUpdate() ){
@@ -63,7 +64,7 @@ public abstract class TransactionalSystem<ID,Quantity extends Number> {
         return Optional.empty();
     }
 
-    protected Transaction<ID,Quantity> getTransaction(int tid ) throws NoSuchTransactionException {
+    protected Transaction<ID,Quantity> getTransaction(int tid ) throws RemoteException {
         Optional<Transaction<ID,Quantity>> maybeTrx = this.findTransaction(tid);
         if( maybeTrx.isEmpty() ){
             throw new NoSuchTransactionException(tid);
@@ -71,13 +72,13 @@ public abstract class TransactionalSystem<ID,Quantity extends Number> {
         return maybeTrx.get();
     }
 
-    private void beforeCommitValidation( Transaction<ID,Quantity> tx ) throws InvalidTransactionException {
+    private void beforeCommitValidation( Transaction<ID,Quantity> tx ) throws RemoteException {
         if( !this.beforeCommit(tx) ){
             throw new InvalidTransactionException( tx.getId() );
         }
     }
 
-    protected void commitTransaction( int tid ) throws InvalidOperationException {
+    protected void commitTransaction( int tid ) throws RemoteException {
         Transaction<ID,Quantity> t = this.getTransaction(tid);
         if( !t.isReadOnly()){
             this.beforeCommitValidation( t );
@@ -90,31 +91,31 @@ public abstract class TransactionalSystem<ID,Quantity extends Number> {
         this.cleanTransactions();
     }
 
-    private void updateResources( Transaction<ID,Quantity> tx ) throws InvalidOperationException{
+    private void updateResources( Transaction<ID,Quantity> tx ) throws RemoteException{
         for( Operation<ID,Quantity> op : tx.getWriteOps() ){
             this.applyOperation(tx,op);
         }
         tx.markForRemoval();
     }
 
-    protected void addWriteOperation( int tid , ID rid , Quantity quantity ) throws InvalidOperationException{
+    protected void addWriteOperation( int tid , ID rid , Quantity quantity ) throws RemoteException{
         Transaction<ID,Quantity> tx = this.getTransaction( tid );
         Operation<ID,Quantity> op = new Operation<>( rid , quantity );
         tx.addWriteOperation(op);
     }
 
-    protected void addReadOperation( int tid , ID rid ) throws InvalidOperationException{
+    protected void addReadOperation( int tid , ID rid ) throws RemoteException{
         Transaction<ID,Quantity> tx = this.getTransaction( tid );
         Operation<ID,Quantity> op = new Operation<>( rid );
         tx.addReadOperation(op);
     }
 
-    protected abstract void alertAbort(Transaction<ID,Quantity> tx , boolean manual ) throws InvalidOperationException;
-    protected abstract void alertCommit( Transaction<ID,Quantity> tx ) throws InvalidOperationException;
-    protected abstract void applyOperation( Transaction<ID,Quantity> tx ,Operation<ID,Quantity> op ) throws InvalidOperationException;
+    protected abstract void alertAbort(Transaction<ID,Quantity> tx , boolean manual ) throws RemoteException;
+    protected abstract void alertCommit( Transaction<ID,Quantity> tx ) throws RemoteException;
+    protected abstract void applyOperation( Transaction<ID,Quantity> tx ,Operation<ID,Quantity> op ) throws RemoteException;
     protected boolean beforeCommit( Transaction<ID,Quantity> tx ) {
         return true;
     }
-    protected void afterCommit( Transaction<ID,Quantity> tx ) throws InvalidOperationException {}
+    protected void afterCommit( Transaction<ID,Quantity> tx ) throws RemoteException {}
 
 }
