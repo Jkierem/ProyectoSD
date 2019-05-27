@@ -74,18 +74,4 @@ public class Store implements IStore {
             }
         }
     }
-
-    public static void main(String[] args) {
-        try {
-            Store store = new Store(args[0]);
-            List<Integer> ids = List.of(4,5);
-            HashMap<Integer,Product>  changed = store.batchGetProductCopies(ids);
-            for( Integer key : changed.keySet() ){
-                changed.get(key).changeQuantityBy(-10);
-            }
-            store.batchSetProducts(changed);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
 }
