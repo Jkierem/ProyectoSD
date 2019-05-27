@@ -8,10 +8,10 @@ Los siguientes paquetes estan definidos:
 - interfaces: Interfaces remotas compartidas
 - store: todo lo referente al manejo de productos
 - shared: Conjunto de funcionalidades utilitarias que no hacen parte del negocio
-- shared.logic : funciones que contienen logica que puede ser compartida entre paquetes
-- shared.functional : implementaciones funcionales
-- shared.utils : funciones utilitarias
-- shared.exceptions: exceptiones personalizadas para transmitir llamados mal formados
+  - logic : funciones que contienen logica que puede ser compartida entre paquetes
+  - functional : implementaciones funcionales
+  - utils : funciones utilitarias
+  - exceptions: exceptiones personalizadas para transmitir llamados mal formados
 
 ## Flujo esperado de Cliente:
 
