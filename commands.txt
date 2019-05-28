@@ -1,6 +1,6 @@
 classdir=/home/juan/Documents/Programacion/IntroSistemasDistribuidos/build
 
-javac -d ./build ./ProyectoSD/src/authentication/*.java ./ProyectoSD/src/interfaces/*.java ./ProyectoSD/src/shared/*/*.java ./ProyectoSD/src/models/*.java 
+javac -d ./build ./ProyectoSD/src/*/*.java ./ProyectoSD/src/*/*/*.java
 
 java -classpath $classdir -Djava.rmi.server.useCodebaseOnly=false -Djava.rmi.server.codebase=file:$classdir/ authentication.Authentication
 
