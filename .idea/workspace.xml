@@ -6,24 +6,7 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="599fa994-0ca6-4eb4-86e9-e81f3e06ff6d" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/authentication/Authentication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/authentication/Authentication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/client/Data.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/Data.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/client/GUIController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/GUIController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/client/GUIRunner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/GUIRunner.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/client/ViewNames.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/ViewNames.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/client/views/InventoryView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/views/InventoryView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/client/views/LoginView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/views/LoginView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/interfaces/IAuthentication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/interfaces/IAuthentication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/interfaces/IProductSystem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/interfaces/IProductSystem.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/products.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/products.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/shared/logic/RMIServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/logic/RMIServer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/shared/logic/Transaction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/logic/Transaction.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/shared/logic/TransactionalSystem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/logic/TransactionalSystem.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/Product.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store/ProductSystem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/ProductSystem.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/users.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/users.txt" afterDir="false" />
-    </list>
+    <list default="true" id="599fa994-0ca6-4eb4-86e9-e81f3e06ff6d" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -35,44 +18,7 @@
     <option name="isMigrated" value="true" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/client/views/InventoryView.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="566">
-              <caret line="204" column="32" lean-forward="true" selection-start-line="204" selection-start-column="32" selection-end-line="204" selection-end-column="32" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/client/views/AdminProductsView.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1">
-              <caret line="140" column="68" selection-start-line="140" selection-start-column="68" selection-end-line="140" selection-end-column="68" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/store/ProductSystem.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="360">
-              <caret line="161" column="38" selection-start-line="161" selection-start-column="38" selection-end-line="161" selection-end-column="38" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -180,50 +126,6 @@
               <item name="ProyectoSD" type="b2602c69:ProjectViewProjectNode" />
               <item name="ProyectoSD" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ProyectoSD" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ProyectoSD" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="authentication" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ProyectoSD" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ProyectoSD" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="client" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ProyectoSD" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ProyectoSD" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="client" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ProyectoSD" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ProyectoSD" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="interfaces" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ProyectoSD" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ProyectoSD" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="shared" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ProyectoSD" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ProyectoSD" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="shared" type="462c0819:PsiDirectoryNode" />
-              <item name="logic" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ProyectoSD" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ProyectoSD" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="store" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -374,18 +276,17 @@
       <workItem from="1558454008342" duration="1927000" />
       <workItem from="1558462646650" duration="27578000" />
       <workItem from="1558613334713" duration="33508000" />
-      <workItem from="1558995180224" duration="32276000" />
+      <workItem from="1558995180224" duration="32887000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="112065000" />
+    <option name="totallyTimeSpent" value="112676000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="67" y="25" width="1299" height="743" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.22825219" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.22825219" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -395,7 +296,7 @@
       <window_info anchor="bottom" id="Messages" order="0" weight="0.32899022" />
       <window_info anchor="bottom" id="Message" order="1" />
       <window_info anchor="bottom" id="Find" order="2" weight="0.32899022" />
-      <window_info active="true" anchor="bottom" id="Run" order="3" visible="true" weight="0.14820847" />
+      <window_info anchor="bottom" id="Run" order="3" weight="0.14820847" />
       <window_info anchor="bottom" id="Debug" order="4" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="5" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="6" weight="0.4" />
@@ -605,16 +506,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/client/Client.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="17" column="45" lean-forward="true" selection-start-line="17" selection-start-column="45" selection-end-line="17" selection-end-column="45" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/client/views/Login.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
@@ -726,7 +617,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/client/Data.java">
+    <entry file="file://$PROJECT_DIR$/src/client/GUIHelpers.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="83">
           <caret line="40" column="5" selection-start-line="40" selection-start-column="5" selection-end-line="40" selection-end-column="5" />
@@ -826,13 +717,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/products.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="19" lean-forward="true" selection-start-line="4" selection-start-column="19" selection-end-line="4" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/store/Product.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-20">
@@ -887,6 +771,23 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="360">
           <caret line="161" column="38" selection-start-line="161" selection-start-column="38" selection-end-line="161" selection-end-column="38" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/products.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="10" column="16" lean-forward="true" selection-start-line="10" selection-start-column="16" selection-end-line="10" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/client/Client.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" column="17" selection-start-line="9" selection-start-column="17" selection-end-line="9" selection-end-column="17" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
