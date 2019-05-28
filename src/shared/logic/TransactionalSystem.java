@@ -24,6 +24,12 @@ public abstract class TransactionalSystem<ID,Quantity extends Number> {
         return TRANSACTION_COUNT;
     }
 
+    protected int createTransaction(String host,String binding){
+        TRANSACTION_COUNT++;
+        this.transactions.add(new Transaction<>(TRANSACTION_COUNT,host,binding));
+        return TRANSACTION_COUNT;
+    }
+
     protected void manualAbort( int tid ) throws RemoteException {
         Transaction<ID,Quantity> t = this.getTransaction(tid);
         t.markForRemoval();

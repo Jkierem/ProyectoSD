@@ -2,12 +2,16 @@ package shared.logic;
 
 import shared.functional.NullaryFunction;
 
+import java.rmi.NotBoundException;
 import java.rmi.Remote;
+import java.rmi.RemoteException;
 import java.rmi.registry.LocateRegistry;
 import java.rmi.registry.Registry;
 import java.rmi.server.UnicastRemoteObject;
 
 public class RMIServer<Implementer extends Interface,Interface extends Remote> {
+
+    private Registry registry;
 
     private NullaryFunction<Implementer> createRemoteObject;
 
@@ -23,23 +27,31 @@ public class RMIServer<Implementer extends Interface,Interface extends Remote> {
     }
 
     private void rebindStub( String name , Interface stub ) throws Exception {
-        Registry registry = LocateRegistry.getRegistry();
+        registry = LocateRegistry.getRegistry();
         registry.rebind(name, stub);
     }
 
     private void rebindStub( String name , Interface stub , int port ) throws Exception {
-        Registry registry = LocateRegistry.getRegistry(port);
+        registry = LocateRegistry.getRegistry(port);
         registry.rebind(name, stub);
     }
 
     private void bindStub( String name , Interface stub ) throws Exception {
-        Registry registry = LocateRegistry.getRegistry();
+        registry = LocateRegistry.getRegistry();
         registry.bind(name, stub);
     }
 
     private void bindStub( String name , Interface stub , int port ) throws Exception {
-        Registry registry = LocateRegistry.getRegistry(port);
+        registry = LocateRegistry.getRegistry(port);
         registry.bind(name, stub);
+    }
+
+    public void unbindStub( String name ) {
+        try {
+            registry.unbind(name);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     public void createAndBind( String name ) throws Exception{

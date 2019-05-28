@@ -4,6 +4,7 @@ import interfaces.IAuthentication;
 import interfaces.IClient;
 import interfaces.IProductSystem;
 import shared.exceptions.InvalidOperationException;
+import shared.exceptions.UnauthorizedException;
 import shared.logic.*;
 import shared.utils.ConditionalLogger;
 
@@ -38,6 +39,13 @@ public class ProductSystem extends TransactionalSystem<Integer,Integer> implemen
     private ConditionalLogger logger;
 
     private static final String TOKEN = "849cf295c3276fa8674b76535ba206e4f4ae2260977ccb4d4dabe897f20aeb83";
+
+    private void validateToken( String token ) throws UnauthorizedException {
+        if( !token.equals(TOKEN) ){
+            this.logger.log("Received invalid token: " + token );
+            throw new UnauthorizedException(token);
+        }
+    }
 
     public ProductSystem(Store store, String authHost) {
         super();
@@ -81,7 +89,7 @@ public class ProductSystem extends TransactionalSystem<Integer,Integer> implemen
     public void attemptPurchase(int tid , String user ) throws RemoteException {
         this.logger.log("Attempting purchase of transaction " + tid + " by user " + user);
         Transaction<Integer,Integer> tx = this.getTransaction(tid);
-        if( !this.canCommitProductTransaction(tx,user) ){
+        if( !this.canCommitProductTransaction(tx) ){
             this.forceAbort( tx );
         }else{
             IAuthentication auth = this.authClient.getStub("Auth");
@@ -99,6 +107,18 @@ public class ProductSystem extends TransactionalSystem<Integer,Integer> implemen
     }
 
     @Override
+    public void attemptAdminRestock(int tid, String token) throws RemoteException {
+        this.logger.log("Attempting transaction " + tid + " by admin");
+        this.validateToken(token);
+        Transaction<Integer,Integer> tx = this.getTransaction(tid);
+        if( !this.canCommitProductTransaction(tx) ){
+            this.forceAbort( tx );
+        }else {
+            this.commitTransaction(tid);
+        }
+    }
+
+    @Override
     public Product getProduct( int tid , int rid ) throws RemoteException {
         Product p = this.getSingleProduct( rid );
         this.addReadOperation(tid,rid);
@@ -106,11 +126,12 @@ public class ProductSystem extends TransactionalSystem<Integer,Integer> implemen
     }
 
     @Override
-    public List<Product> getAllProducts( int tid ) throws RemoteException {
+    public List<Product> getAllProducts( ) throws RemoteException {
+        this.logger.log("Get of all products");
         HashMap<Integer,Product> ps = this.store.getAllProductCopies();
         List<Product> res = new ArrayList<>();
         for ( int key : ps.keySet() ){
-            this.addReadOperation(tid,key);
+            res.add( ps.get(key) );
         }
         return res;
     }
@@ -138,21 +159,23 @@ public class ProductSystem extends TransactionalSystem<Integer,Integer> implemen
         this.logger.log("Signaling commit of " + tx.getId() );
         ClientData client = this.hosts.get(tx.getHost());
         String binding = client.getBinding();
+        this.logger.log("Binding: " + binding);
         client.getClient().getStub(binding).alertCommit( tx.getId() );
     }
 
     @Override
     protected void applyOperation(Transaction<Integer,Integer> tx, Operation<Integer,Integer> op) throws RemoteException {
         Product p = this.getSingleProduct( op.getRid() );
-        p.changeQuantityBy( op.getQuantity().intValue() );
+        this.logger.log("" + -1 * op.getQuantity().intValue());
+        p.changeQuantityBy( -1 * op.getQuantity().intValue() );
         this.store.setProduct(p);
     }
 
-    private boolean canCommitProductTransaction( Transaction<Integer,Integer> tx , String user ){
+    private boolean canCommitProductTransaction( Transaction<Integer,Integer> tx ){
         try{
             for( Operation<Integer,Integer> op : tx.getWriteOps() ){
                 Product p = this.getSingleProduct(op.getRid());
-                if( p.getQuantity() < op.getQuantity().intValue()  ){
+                if( p.getQuantity() + (-1 * op.getQuantity().intValue()) < 0 ){
                     return false;
                 }
             }
