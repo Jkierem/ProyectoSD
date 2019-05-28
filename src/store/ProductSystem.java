@@ -139,6 +139,7 @@ public class ProductSystem extends TransactionalSystem<Integer,Integer> implemen
     @Override
     public void attemptUpdateProductQuantity( int tid , int rid , int quantity ) throws RemoteException {
         this.logger.log("Adding write operation to " + tid + " on resource "+ rid + " with quantity of " + quantity );
+        this.addReadOperation(tid, rid);
         this.addWriteOperation(tid,rid,quantity);
     }
 

@@ -116,6 +116,7 @@ public class LoginView extends View {
                 this.frame.getContentPane().repaint();
             }
         } catch (RemoteException e) {
+            e.printStackTrace();
             this.failed = true;
             this.render(this.frame);
             this.frame.getContentPane().repaint();

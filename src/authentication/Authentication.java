@@ -121,6 +121,7 @@ public class Authentication extends TransactionalSystem<String,Integer> implemen
         this.validateToken(token);
         this.validateUser(user);
         int tid = this.createTransaction(host, binding);
+        this.addReadOperation( tid , user );
         this.addWriteOperation( tid , user, amount);
         this.logger.log("Created transaction " + tid );
         return tid;
