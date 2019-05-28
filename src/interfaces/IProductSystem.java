@@ -12,6 +12,7 @@ public interface IProductSystem extends Remote {
     void abortProductTransaction( int tid ) throws RemoteException;
     void attemptPurchase(int tid , String user ) throws RemoteException;
     Product getProduct( int tid , int rid ) throws RemoteException;
-    List<Product> getAllProducts( int tid ) throws RemoteException;
+    List<Product> getAllProducts( ) throws RemoteException;
     void attemptUpdateProductQuantity( int tid , int rid , int quantity ) throws RemoteException;
+    void attemptAdminRestock( int tid , String token ) throws RemoteException;
 }

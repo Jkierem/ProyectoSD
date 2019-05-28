@@ -11,12 +11,23 @@ public class Transaction<ID,Quantity extends Number> {
     private int id;
 
     private String host;
+    private String binding;
     private State state;
     private List<Operation<ID,Quantity>> readOps;
     private List<Operation<ID,Quantity>> writeOps;
     public Transaction(int id, String host) {
         this.id = id;
         this.host = host;
+        this.binding = "";
+        this.state = State.WORKING;
+        this.readOps = new ArrayList<>();
+        this.writeOps = new ArrayList<>();
+    }
+
+    public Transaction(int id, String host, String binding) {
+        this.id = id;
+        this.host = host;
+        this.binding = binding;
         this.state = State.WORKING;
         this.readOps = new ArrayList<>();
         this.writeOps = new ArrayList<>();
@@ -28,6 +39,10 @@ public class Transaction<ID,Quantity extends Number> {
 
     public int getId(){
         return this.id;
+    }
+
+    public String getBinding() {
+        return binding;
     }
 
     public void addReadOperation(Operation<ID,Quantity> op ){
@@ -47,6 +62,7 @@ public class Transaction<ID,Quantity extends Number> {
     }
 
     public boolean isAwaitingUpdate(){ return this.state == State.UPDATE; }
+
     public boolean isReadyForRemoval(){ return this.state == State.FINISHED; }
 
     public boolean isReadOnly(){

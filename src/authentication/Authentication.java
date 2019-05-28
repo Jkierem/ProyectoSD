@@ -1,19 +1,19 @@
 package authentication;
 
 import interfaces.IAuthentication;
+import interfaces.IClient;
 import shared.exceptions.InvalidOperationException;
 import shared.exceptions.ServerException;
-import shared.logic.AuthResponse;
-import shared.logic.Operation;
+import shared.logic.*;
 import shared.exceptions.UnauthorizedException;
 import shared.exceptions.UserNotFoundException;
-import shared.logic.Transaction;
-import shared.logic.TransactionalSystem;
 import shared.utils.ConditionalLogger;
 
 import java.io.IOException;
 import java.rmi.RemoteException;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 
 
 public class Authentication extends TransactionalSystem<String,Integer> implements IAuthentication {
@@ -110,7 +110,17 @@ public class Authentication extends TransactionalSystem<String,Integer> implemen
     public int attemptChangeBalance(String user, int amount, String token) throws RemoteException {
         this.validateToken(token);
         this.validateUser(user);
-        int tid = this.createTransaction("ADMIN");
+        int tid = this.createTransaction("NONE");
+        this.addWriteOperation( tid , user, amount);
+        this.logger.log("Created transaction " + tid );
+        return tid;
+    }
+
+    @Override
+    public int attemptChangeBalanceWithResponse(String host, String binding, String user, int amount, String token) throws RemoteException {
+        this.validateToken(token);
+        this.validateUser(user);
+        int tid = this.createTransaction(host, binding);
         this.addWriteOperation( tid , user, amount);
         this.logger.log("Created transaction " + tid );
         return tid;
@@ -151,13 +161,23 @@ public class Authentication extends TransactionalSystem<String,Integer> implemen
     }
 
     @Override
-    protected void alertAbort(Transaction<String, Integer> tx, boolean manual) throws InvalidOperationException {
+    protected void alertAbort(Transaction<String, Integer> tx, boolean manual) throws RemoteException {
         this.logger.log("Aborted "+String.valueOf(tx.getId()));
+        if( !tx.getHost().equals("NONE") ){
+            RMIClient<IClient> client = new RMIClient<>(tx.getHost());
+            IClient stub = client.getStub(tx.getBinding());
+            stub.alertAbort(tx.getId(),manual);
+        }
     }
 
     @Override
-    protected void alertCommit(Transaction<String, Integer> tx) throws InvalidOperationException {
+    protected void alertCommit(Transaction<String, Integer> tx) throws RemoteException {
         this.logger.log("Committed "+String.valueOf(tx.getId()));
+        if( !tx.getHost().equals("NONE") ){
+            RMIClient<IClient> client = new RMIClient<>(tx.getHost());
+            IClient stub = client.getStub(tx.getBinding());
+            stub.alertCommit(tx.getId());
+        }
     }
 
     @Override
@@ -191,5 +211,11 @@ public class Authentication extends TransactionalSystem<String,Integer> implemen
             builder.append(data.isAdmin());
             System.out.println(builder.toString());
         }
+    }
+
+    @Override
+    public List<String> getUserList(String token) throws RemoteException {
+        this.validateToken(token);
+        return new ArrayList<>(this.userBase.keySet());
     }
 }

@@ -35,6 +35,7 @@ public class Product implements Serializable {
 
     public void changeQuantityBy(int amount ) throws InsufficientQuantityException {
         if( quantity + amount < 0 ){
+            System.out.println("Not enough");
             throw new InsufficientQuantityException();
         }
         this.quantity += amount;

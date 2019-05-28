@@ -1,6 +1,6 @@
 package client.views;
 
-import client.Data;
+import client.GUIHelpers;
 import client.View;
 import client.ViewNames;
 import interfaces.IAuthentication;
@@ -40,10 +40,10 @@ public class LoginView extends View {
 
     private void dirtyRender(){
         if( this.failed ){
-            int thirdLabel = 7*Data.UNIT;
+            int thirdLabel = 7* GUIHelpers.UNIT;
             JLabel failedMessage = new JLabel("Usuario y/o contraseña erroneo",SwingConstants.CENTER);
             failedMessage.setForeground(Color.RED);
-            Data.setTextCentered( failedMessage , thirdLabel , Data.TEXT_WIDTH + 2*Data.UNIT);
+            GUIHelpers.setTextCentered( failedMessage , thirdLabel , GUIHelpers.TEXT_WIDTH + 2* GUIHelpers.UNIT);
             panel.add(failedMessage);
         }
     }
@@ -53,43 +53,43 @@ public class LoginView extends View {
         this.fresh = false;
 
         this.panel = new JPanel();
-        panel.setBounds(0,0, Data.WIDTH,Data.HEIGHT);
+        panel.setBounds(0,0, GUIHelpers.WIDTH, GUIHelpers.HEIGHT);
         panel.setLayout(null);
         frame.getContentPane().add(panel);
 
-        int firstLabel = Data.PADDING + Data.UNIT;
+        int firstLabel = GUIHelpers.PADDING + GUIHelpers.UNIT;
 
         JLabel userLabel = new JLabel("Tarjeta", SwingConstants.CENTER);
-        Data.setTextCentered(userLabel , firstLabel);
-        Data.setDefaultFont(userLabel,14);
+        GUIHelpers.setTextCentered(userLabel , firstLabel);
+        GUIHelpers.setDefaultFont(userLabel,14);
         panel.add(userLabel);
 
-        int firstField = firstLabel + (Data.UNIT* 3/4);
+        int firstField = firstLabel + (GUIHelpers.UNIT* 3/4);
 
         this.usernameField = new JTextField();
-        Data.setTextCentered( usernameField , firstField);
-        Data.setDefaultFont(usernameField, 11, Font.PLAIN);
+        GUIHelpers.setTextCentered( usernameField , firstField);
+        GUIHelpers.setDefaultFont(usernameField, 11, Font.PLAIN);
         panel.add(usernameField);
 
-        int secondLabel = firstField + Data.UNIT + ((6*Data.UNIT)/10);
+        int secondLabel = firstField + GUIHelpers.UNIT + ((6* GUIHelpers.UNIT)/10);
 
         JLabel passwordLabel = new JLabel("Contraseña",SwingConstants.CENTER);
-        Data.setTextCentered( passwordLabel , secondLabel);
-        Data.setDefaultFont(passwordLabel,14);
+        GUIHelpers.setTextCentered( passwordLabel , secondLabel);
+        GUIHelpers.setDefaultFont(passwordLabel,14);
         panel.add(passwordLabel);
 
-        int secondField = secondLabel + ((Data.UNIT* 3)/4);
+        int secondField = secondLabel + ((GUIHelpers.UNIT* 3)/4);
 
         this.passwordField = new JPasswordField();
-        Data.setTextCentered( passwordField , secondField );
-        Data.setDefaultFont(passwordField);
+        GUIHelpers.setTextCentered( passwordField , secondField );
+        GUIHelpers.setDefaultFont(passwordField);
         panel.add(passwordField);
 
-        int buttonHeight = secondField + ((Data.UNIT* 7)/4);
+        int buttonHeight = secondField + ((GUIHelpers.UNIT* 7)/4);
 
         JButton loginButton = new JButton("Login");
-        Data.setButtonCentered(loginButton, buttonHeight);
-        Data.setDefaultFont(loginButton);
+        GUIHelpers.setButtonCentered(loginButton, buttonHeight);
+        GUIHelpers.setDefaultFont(loginButton);
         panel.add(loginButton);
         loginButton.addActionListener(this::attemptLogin);
     }
@@ -104,11 +104,16 @@ public class LoginView extends View {
             this.failed = !response.isSuccess();
             if( response.isSuccess() ){
                 String token = response.getToken();
+                this.controller.getSharedState().setUser(user);
                 if( token.isEmpty() ){
                     this.controller.changeView(ViewNames.INVENTORY);
                 }else{
+                    this.controller.getSharedState().setToken(token);
                     this.controller.changeView(ViewNames.ADMIN_MENU);
                 }
+            }else{
+                this.render(this.frame);
+                this.frame.getContentPane().repaint();
             }
         } catch (RemoteException e) {
             this.failed = true;

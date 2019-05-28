@@ -11,12 +11,14 @@ public class GUIController {
     private HashMap<ViewNames, NullaryFunction<View>> views;
     private ViewNames currentView;
     private ViewNames defaultView;
+    private State sharedState;
 
     public GUIController(JFrame frame, ViewNames defaultView) {
         this.frame = frame;
         this.currentView = defaultView;
         this.defaultView = defaultView;
         this.views = new HashMap<>();
+        this.sharedState = new State();
     }
 
     public void bindView( NullaryFunction<View> view , ViewNames name ){
@@ -58,4 +60,9 @@ public class GUIController {
         this.getView(this.currentView).render(this.frame);
         this.frame.setVisible(true);
     }
+
+    public State getSharedState() {
+        return sharedState;
+    }
+    public void wipeState(){ this.sharedState = new State(); }
 }

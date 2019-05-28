@@ -3,7 +3,7 @@ package client;
 import javax.swing.*;
 import java.awt.*;
 
-public class Data {
+public class GUIHelpers {
     public static int PADDING=20;
 
     public static int UNIT=50;
@@ -16,6 +16,9 @@ public class Data {
 
     public static int TEXT_HEIGHT=35;
     public static int TEXT_WIDTH=(WIDTH/3);
+
+    public static int COMBO_HEIGHT=40;
+    public static int COMBO_WIDTH=(UNIT*5);
 
     public static int getXCenter( int width ){
         return (WIDTH/2) - (width/2);
@@ -31,6 +34,14 @@ public class Data {
 
     public static void setButtonCentered( JButton button , int height ){
         button.setBounds( getXCenter(BUTTON_WIDTH), height , BUTTON_WIDTH, BUTTON_HEIGHT );
+    }
+
+    public static void setButtonCentered( JButton button , int height , int width ){
+        button.setBounds( getXCenter(BUTTON_WIDTH+width), height , BUTTON_WIDTH + width, BUTTON_HEIGHT );
+    }
+
+    public static void setComboCentered( JComboBox button , int height ){
+        button.setBounds( getXCenter(COMBO_WIDTH), height , COMBO_WIDTH, COMBO_HEIGHT );
     }
 
     public static void setDefaultFont(Component c ){
