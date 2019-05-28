@@ -180,11 +180,11 @@ public class InventoryView extends View implements IClient {
         try {
             if( !this.isBound ){
                 server = new RMIServer<>(() -> this);
-                server.createAndRebind("Client");
+                server.createAndRebind("MarketClient");
                 this.isBound = true;
             }
             market = this.market.getStub("Market");
-            int tid = market.startProductTransaction(Utils.getLocalAddress(),"Client");
+            int tid = market.startProductTransaction(Utils.getLocalAddress(),"MarketClient");
             for( Integer key : cart.keySet() ){
                 Product p = cart.get(key);
                 market.attemptUpdateProductQuantity( tid , p.getId(), p.getQuantity() );
@@ -202,7 +202,7 @@ public class InventoryView extends View implements IClient {
     }
 
     private void logout(ActionEvent arg){
-        this.server.unbindStub("Client");
+        this.server.unbindStub("MarketClient");
         this.controller.wipeState();
         this.controller.goToDefault();
     }
