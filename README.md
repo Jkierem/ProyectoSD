@@ -4,7 +4,8 @@
 
 Los siguientes paquetes estan definidos:
 - authentication: Todo lo referente a autenticacion. 
-- client: Todo lo referente al cliente
+- client: Todo lo referente al cliente y la interfaz grafica
+  - views: Paquete de vistas donde estan las vistas de la interfaz grafica
 - interfaces: Interfaces remotas compartidas
 - store: todo lo referente al manejo de productos
 - shared: Conjunto de funcionalidades utilitarias que no hacen parte del negocio
@@ -16,8 +17,8 @@ Los siguientes paquetes estan definidos:
 ## Flujo esperado de Cliente:
 
 - [X] 1 - Autenticar
-- [ ] 2 - Armar Pedido
-- [ ] 3 - Realizar Compra
+- [X] 2 - Armar Pedido
+- [X] 3 - Realizar Compra
 
 El control de concurrencia que se debe usar es optimista con chequeo foward.
 
@@ -50,7 +51,7 @@ UserData:
 ### 2 - Armar Pedido
 
 - [X] Control de concurrencia
-- [ ] 2PC
+- [X] 2PC
 
 #### 2.1 - Manejo de balances
 
@@ -58,7 +59,7 @@ UserData:
 - [X] Funcion para realizar 2PC (canCommitBalanceChange)
 - [X] Uso de token administrador
 - [X] Usuario administrador
-- [ ] Integracion con manejo de transacciones de producto
+- [X] Integracion con manejo de transacciones de producto
 
 #### 2.2 - Manejo de recursos
 
