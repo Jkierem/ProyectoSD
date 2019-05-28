@@ -7,18 +7,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="599fa994-0ca6-4eb4-86e9-e81f3e06ff6d" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Taller-RMI/client/Client.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Taller-RMI/client/Data.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Taller-RMI/client/GUIRunner.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Taller-RMI/client/GUIRunner.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Taller-RMI/client/views/AdminFundsView.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Taller-RMI/client/views/AdminFundsView.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Taller-RMI/client/views/AdminProductsView.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Taller-RMI/client/views/AdminProductsView.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Taller-RMI/client/views/AdminView.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Taller-RMI/client/views/AdminView.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Taller-RMI/client/views/InventoryView.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Taller-RMI/client/views/InventoryView.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Taller-RMI/client/views/LoginView.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Taller-RMI/client/views/LoginView.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Taller-RMI/products.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Taller-RMI/products.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/client/GUIRunner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/GUIRunner.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/client/views/InventoryView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/views/InventoryView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/shared/logic/TransactionalSystem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/logic/TransactionalSystem.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -32,11 +21,59 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/client/GUIRunner.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="16" column="49" lean-forward="true" selection-start-line="16" selection-start-column="49" selection-end-line="16" selection-end-column="49" />
+            <state relative-caret-position="442">
+              <caret line="33" column="49" selection-start-line="33" selection-start-column="49" selection-end-line="33" selection-end-column="49" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/store/MarketRunner.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="225">
+              <caret line="15" column="53" selection-start-line="15" selection-start-column="53" selection-end-line="15" selection-end-column="53" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/authentication/AuthRunner.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="330">
+              <caret line="22" column="52" lean-forward="true" selection-start-line="22" selection-start-column="52" selection-end-line="22" selection-end-column="52" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/store/ProductSystem.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="922">
+              <caret line="132" column="38" lean-forward="true" selection-start-line="132" selection-start-column="38" selection-end-line="132" selection-end-column="38" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/shared/logic/TransactionalSystem.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="247">
+              <caret line="110" column="12" lean-forward="true" selection-start-line="110" selection-start-column="12" selection-end-line="110" selection-end-column="12" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -112,7 +149,6 @@
         <option value="$PROJECT_DIR$/src/client/views/AdminView.java" />
         <option value="$PROJECT_DIR$/src/client/Data.java" />
         <option value="$PROJECT_DIR$/src/interfaces/IAuthentication.java" />
-        <option value="$PROJECT_DIR$/src/shared/logic/TransactionalSystem.java" />
         <option value="$PROJECT_DIR$/src/shared/logic/Transaction.java" />
         <option value="$PROJECT_DIR$/src/authentication/Authentication.java" />
         <option value="$PROJECT_DIR$/src/shared/logic/RMIServer.java" />
@@ -123,6 +159,7 @@
         <option value="$PROJECT_DIR$/src/store/ProductSystem.java" />
         <option value="$PROJECT_DIR$/src/client/views/InventoryView.java" />
         <option value="$PROJECT_DIR$/src/client/GUIRunner.java" />
+        <option value="$PROJECT_DIR$/src/shared/logic/TransactionalSystem.java" />
       </list>
     </option>
   </component>
@@ -157,7 +194,32 @@
               <item name="ProyectoSD" type="b2602c69:ProjectViewProjectNode" />
               <item name="ProyectoSD" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="authentication" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ProyectoSD" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ProyectoSD" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="client" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ProyectoSD" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ProyectoSD" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="shared" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ProyectoSD" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ProyectoSD" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="shared" type="462c0819:PsiDirectoryNode" />
+              <item name="logic" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ProyectoSD" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ProyectoSD" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="store" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -310,12 +372,12 @@
       <workItem from="1558462646650" duration="27578000" />
       <workItem from="1558613334713" duration="33508000" />
       <workItem from="1558995180224" duration="32887000" />
-      <workItem from="1559053314812" duration="2422000" />
+      <workItem from="1559053314812" duration="3815000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="115098000" />
+    <option name="totallyTimeSpent" value="116491000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="67" y="25" width="1299" height="743" extended-state="6" />
@@ -483,26 +545,6 @@
             <element signature="imports" expanded="true" />
             <element signature="e#646#647#0" expanded="true" />
             <element signature="e#667#668#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/authentication/AuthRunner.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="18" column="26" lean-forward="true" selection-start-line="18" selection-start-column="26" selection-end-line="18" selection-end-column="26" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/store/MarketRunner.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="23" column="45" lean-forward="true" selection-start-line="23" selection-start-column="45" selection-end-line="23" selection-end-column="45" />
-          <folding>
-            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -689,30 +731,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/shared/logic/TransactionalSystem.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="94" column="13" selection-start-line="94" selection-start-column="13" selection-end-line="94" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/client/views/AdminProductsView.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1">
           <caret line="140" column="68" selection-start-line="140" selection-start-column="68" selection-end-line="140" selection-end-column="68" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/store/ProductSystem.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="161" column="38" selection-start-line="161" selection-start-column="38" selection-end-line="161" selection-end-column="38" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -727,13 +749,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/client/Client.java" />
-    <entry file="file://$PROJECT_DIR$/commands.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/client/views/InventoryView.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2963">
@@ -746,8 +761,55 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/client/GUIRunner.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="16" column="49" lean-forward="true" selection-start-line="16" selection-start-column="49" selection-end-line="16" selection-end-column="49" />
+        <state relative-caret-position="442">
+          <caret line="33" column="49" selection-start-line="33" selection-start-column="49" selection-end-line="33" selection-end-column="49" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/store/MarketRunner.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="15" column="53" selection-start-line="15" selection-start-column="53" selection-end-line="15" selection-end-column="53" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/commands.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="108" selection-start-line="4" selection-start-column="66" selection-end-line="4" selection-end-column="108" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/authentication/AuthRunner.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="22" column="52" lean-forward="true" selection-start-line="22" selection-start-column="52" selection-end-line="22" selection-end-column="52" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/store/ProductSystem.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="922">
+          <caret line="132" column="38" lean-forward="true" selection-start-line="132" selection-start-column="38" selection-end-line="132" selection-end-column="38" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/shared/logic/TransactionalSystem.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="247">
+          <caret line="110" column="12" lean-forward="true" selection-start-line="110" selection-start-column="12" selection-end-line="110" selection-end-column="12" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

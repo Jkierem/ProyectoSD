@@ -108,12 +108,22 @@ public abstract class TransactionalSystem<ID,Quantity extends Number> {
         Transaction<ID,Quantity> tx = this.getTransaction( tid );
         Operation<ID,Quantity> op = new Operation<>( rid , quantity );
         tx.addWriteOperation(op);
+        try{
+            Thread.sleep(2000);
+        }catch (Exception e){
+            throw new InvalidOperationException("Interrupted exception");
+        }
     }
 
     protected void addReadOperation( int tid , ID rid ) throws RemoteException{
         Transaction<ID,Quantity> tx = this.getTransaction( tid );
         Operation<ID,Quantity> op = new Operation<>( rid );
         tx.addReadOperation(op);
+        try{
+            Thread.sleep(2000);
+        }catch (Exception e){
+            throw new InvalidOperationException("Interrupted exception");
+        }
     }
 
     protected abstract void alertAbort(Transaction<ID,Quantity> tx , boolean manual ) throws RemoteException;
